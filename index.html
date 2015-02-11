@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Personal Agenda</title>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+
+    <div class="container"> 
+      <div class="row">
+        <form class="form-horizontal col-md-6">
+            <div class="form-group">
+              <label for="event-input">Event Title</label>
+              <input type="text" class="form-control event-title">
+            </div>
+
+           
+            <div class="form-group">
+              <label for="nameInput">date</label>
+              <input type="date" class="form-control event-date">
+            </div>
+
+            <div class="form-group">
+              <label for="hours input">hours</label>
+              <input type="number" class="form-control event-time" min="1" max="24">
+            </div>
+
+            <div class="form-group">
+              <label for="event-type">type</label>
+                <select id="myselect" class="form-control">
+                  <option value="work">work</option>
+                  <option value="family">family</option>
+                  <option value="personal">personal</option>
+                  <option value="rest">rest</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+
+
+          </form>
+
+      </div>
+
+      <div class="agenda">
+      </div>
+
+    </div>
+    <!-- END OF CONTAINER -->
+
+    
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script src="main.js"></script>
+
+  </body>
+</html>
