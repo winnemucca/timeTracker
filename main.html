@@ -1,0 +1,193 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Personal Agenda</title>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/themes/classic.css" >
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/themes/classic.date.css" >
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/themes/classic.time.css" >
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row one top-buffer">
+        <!-- <div class="header"> -->
+        <div class="col-xs-12 col-sm-6 col-md-6 header"> 
+          <div class=" headerImage">
+            <img src="http://chriscreedblog.com/wp-content/uploads/2013/11/priorities.jpg">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 header">
+          <div class="infoContainer"> 
+            <div class=" headerInfo"> 
+              <p>"I learned that we can do anything, but we can't do everything... at least not at the same time. So think of your priorities not in terms of what activities you do, but when you do them. Timing is everything."                                          
+                                                      <span class="author">Dan Millman</span>
+              </p>
+
+              <p>"The key is not to prioritize what's on your schedule, but to schedule your priorities."
+                                                    <span class="author">Stephen Covey</span>
+              </p>
+            </div>
+
+          </div>
+      </div>
+
+      </div>
+      <!-- end of row one -->
+
+      <div class="row two top-buffer">
+          
+          <div class="col-xs-12 col-sm-6 col-md-6"> 
+
+            <form class="form-horizontal formInput" >
+                <div class="form-group">
+                  <label for="event-input">Event Title</label>
+                  <input type="text" class="form-control event-title">
+                </div>
+
+               
+                <div class="form-group">
+                  <label for="nameInput">date</label>
+                  <input type="date" class="form-control event-date datepicker">
+                </div>
+
+                <div class="form-group">
+                  <label for="hours input">Minutes</label>
+                  <input type="number" class="form-control event-time" min="1" max="24">
+                </div>
+
+                <div class="form-group">
+                  <label for="event-type">type</label>
+                    <select id="myselect" class="form-control">
+                      <option value="work">work</option>
+                      <option value="family">family</option>
+                      <option value="personal">personal</option>
+                      <option value="rest">rest</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+
+              </form>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6"> 
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="total-time familyTime">
+              <h4>Family </h4>
+              <p class="familyMinutes"> </p>
+            </div>
+            </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="total-time restTime">
+              <h4>Rest: </h4>
+              <p class="restMinutes"> </p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="total-time personalTime">
+              <h4>Personal: </h4>
+              <p class="personalMinutes personalTime"> </p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="total-time workTime">
+              <h4> Work</h4>
+              <p class="workMinutes"> </p>
+            </div>
+          </div>
+        </div>
+
+
+        </div>
+        <!-- end of row 2 -->
+
+        <div class="row 3">
+            <h1 class="agendaTitle">Agenda </h1>
+            <div class="agenda"> </div>
+
+        </div>
+
+
+
+
+
+        <div class="row four top-buffer">
+          
+            <div class="col-xs-12 col-sm-6 col-md-6"> 
+              
+              <div id="donut">
+              </div>
+
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6"> 
+
+              <div id="barChart">
+              </div>
+
+            </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+        <!-- end of row four -->
+
+
+
+
+    </div>  
+    <!--  end of container -->
+
+
+      <!--  <div class="row">
+                  <h1 class="agendaTitle">Agenda </h1>
+                  <div class="agenda"> </div>
+        </div> -->
+
+        <div class="row">
+
+            <div id="donut">
+            </div>
+
+            <div id="barChart">
+            </div>
+
+          </div>
+    </div>
+
+
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+     <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.1.0/lodash.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
+
+
+
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/picker.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/picker.time.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/compressed/picker.date.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+
+
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
