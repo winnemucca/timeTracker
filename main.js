@@ -202,12 +202,19 @@ $(document).on('ready', function() {
 		element: 'donut',
 		colors: colors_array,
 		data: [
-			{label: 'family',value:Library.groupEventsType().family},
-			{label:'personal',value:Library.groupEventsType().personal},
-			{label:'rest',value:Library.groupEventsType().rest},
-			{label:'work',value:Library.groupEventsType().work}
+			{label: 'family', value:Library.groupEventsType().family /60},
+			{label:'personal',value:Math.round(Library.groupEventsType().personal/60,-1)},
+			{label:'rest',value:Math.round(Library.groupEventsType().rest/60)},
+			{label:'work',value:Library.groupEventsType().work/60}
 		],
 	});
+
+
+
+
+
+
+
 
 	Morris.Bar({
 		element:'barChart',
